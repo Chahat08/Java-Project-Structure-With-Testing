@@ -7,29 +7,38 @@ set PACKAGE2_DIR=".\src\main\com\example\package2"
 
 javac %PACKAGE1_DIR%\*.java -d %TARGET_DIR_CLASSES%
 javac %PACKAGE2_DIR%\*.java -d %TARGET_DIR_CLASSES%
-javac -cp ".;%TARGET_DIR%" %MAIN_APP% -d %TARGET_DIR_CLASSES%
+javac -cp ".;%TARGET_DIR_CLASSES%" %MAIN_APP% -d %TARGET_DIR_CLASSES%
 
-ECHO \n compiled src
-ECHO continue to compile test \n
+ECHO.
+ECHO compiled src
+ECHO continue to compile test
+ECHO.
 
-set TARGET_DIR_TESTS=".\target\test-classes"
+PAUSE
+
 set MAIN_TEST_APP=".\src\test\com\example\MainApplicationTests.java"
-set PACKAGE1_TEST_DIR=".\src\test\com\example\package1"
-set PACKAGE2_TEST_DIR=".\src\test\com\example\package2"
+@REM set PACKAGE1_TEST_DIR=".\src\test\com\example\package1"
+@REM set PACKAGE2_TEST_DIR=".\src\test\com\example\package2"
+@REM
+@REM
+@REM javac %PACKAGE1_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
+@REM javac %PACKAGE2_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
+javac -cp ".;%TARGET_DIR_CLASSES%;%TARGET_DIR_TESTS%;" %MAIN_TEST_APP% -d %TARGET_DIR_TESTS%
 
+ECHO.
+ECHO compiled test
+ECHO continue to run MainApplication
+ECHO.
 
-javac %PACKAGE1_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
-javac %PACKAGE2_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
-javac -cp ".;%TARGET_DIR%" %MAIN_APP% -d %TARGET_DIR_TESTS%
+PAUSE
 
-ECHO \n compiled test
-ECHO continue to run MainApplication \n
+java -cp %TARGET_DIR_CLASSES% MainApplication
+
+ECHO.
+ECHO ran MainApplication
+ECHO continue to run tests
+ECHO.
 
 PAUSE
 
-java -cp %TARGET_DIR% MainApplication
-
-ECHO \n ran MainApplication
-ECHO continue to run tests \n
-
-PAUSE
+java -cp "%TARGET_DIR_TESTS%" MainApplicationTests
