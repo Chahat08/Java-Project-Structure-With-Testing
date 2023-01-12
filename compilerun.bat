@@ -41,4 +41,4 @@ ECHO.
 
 PAUSE
 
-java -cp "%TARGET_DIR_TESTS%" com.example.MainApplicationTests
+java -cp "%TARGET_DIR_TESTS%;%TARGET_DIR_CLASSES%" com.example.MainApplicationTests

@@ -7,14 +7,22 @@ public class MainApplication {
     private ClassA classA;
     private ClassC classC;
 
+    public String toStringClassA(){
+        return classA.toString();
+    }
+
+    public String toStringClassC(){
+        return classC.toString();
+    }
+
     public MainApplication(){
         this.classA = new ClassA();
         this.classC = new ClassC();
     }
     public static void main(String args[]){
         MainApplication application = new MainApplication();
-        System.out.println(application.classA);
-        System.out.println(application.classC);
+        System.out.println(application.toStringClassA());
+        System.out.println(application.toStringClassC());
     }
 
 }
