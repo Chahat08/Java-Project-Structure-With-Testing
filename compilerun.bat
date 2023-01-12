@@ -23,7 +23,7 @@ set MAIN_TEST_APP=".\src\test\com\example\MainApplicationTests.java"
 @REM
 @REM javac %PACKAGE1_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
 @REM javac %PACKAGE2_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
-javac -cp ".;%TARGET_DIR_CLASSES\com\example%;%TARGET_DIR_TESTS%;" %MAIN_TEST_APP% -d %TARGET_DIR_TESTS%
+javac -cp ".;%TARGET_DIR_CLASSES%;%TARGET_DIR_TESTS%;" %MAIN_TEST_APP% -d %TARGET_DIR_TESTS%
 
 ECHO.
 ECHO compiled test
@@ -32,7 +32,7 @@ ECHO.
 
 PAUSE
 
-java -cp %TARGET_DIR_CLASSES% MainApplication
+java -cp %TARGET_DIR_CLASSES% com.example.MainApplication
 
 ECHO.
 ECHO ran MainApplication
@@ -41,4 +41,4 @@ ECHO.
 
 PAUSE
 
-java -cp "%TARGET_DIR_TESTS%" MainApplicationTests
+java -cp "%TARGET_DIR_TESTS%" com.example.MainApplicationTests

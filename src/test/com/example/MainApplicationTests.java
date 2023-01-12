@@ -1,3 +1,4 @@
+package com.example;
 import com.example.MainApplication;
 public class MainApplicationTests{
 
