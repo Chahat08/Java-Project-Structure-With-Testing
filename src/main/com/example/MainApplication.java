@@ -9,7 +9,6 @@ public class MainApplication {
         this.classA = new ClassA();
         this.classC = new ClassC();
     }
-
     public static void main(String args[]){
         MainApplication application = new MainApplication();
         System.out.println(application.classA);
