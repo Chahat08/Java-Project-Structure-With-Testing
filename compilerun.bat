@@ -23,7 +23,7 @@ set MAIN_TEST_APP=".\src\test\com\example\MainApplicationTests.java"
 @REM
 @REM javac %PACKAGE1_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
 @REM javac %PACKAGE2_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
-javac -cp ".;%TARGET_DIR_CLASSES%;%TARGET_DIR_TESTS%;" %MAIN_TEST_APP% -d %TARGET_DIR_TESTS%
+javac -cp ".;%TARGET_DIR_CLASSES\com\example%;%TARGET_DIR_TESTS%;" %MAIN_TEST_APP% -d %TARGET_DIR_TESTS%
 
 ECHO.
 ECHO compiled test

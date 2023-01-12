@@ -1,3 +1,4 @@
+import com.example.MainApplication;
 public class MainApplicationTests{
 
     public static void shouldEqual() throws Exception {

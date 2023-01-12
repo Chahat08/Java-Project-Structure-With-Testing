@@ -1,3 +1,5 @@
+package com.example;
+
 import com.example.package1.ClassA;
 import com.example.package2.ClassC;
 public class MainApplication {
