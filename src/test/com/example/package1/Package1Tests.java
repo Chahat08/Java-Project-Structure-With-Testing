@@ -15,7 +15,7 @@ public class Package1Tests{
 
     public void classATest() {
         try {
-            if (this.classATest().toString()!="ClassA, package1")
+            if (this.classAUnderTest.toString()!="ClassA, package1")
                 throw new Exception("TEST FAILED");
             else
                 System.out.println("Test package1 classATest passed successfully");
@@ -27,7 +27,7 @@ public class Package1Tests{
 
     public void classBTest() {
         try {
-            if (this.classBTest().toString()!="ClassB, package1")
+            if (this.classBUnderTest.toString()!="ClassB, package1")
                 throw new Exception("TEST FAILED");
             else
                 System.out.println("Test package1 classBTest passed successfully");

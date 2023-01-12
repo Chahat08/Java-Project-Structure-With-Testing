@@ -17,12 +17,12 @@ ECHO.
 PAUSE
 
 set MAIN_TEST_APP=".\src\test\com\example\MainApplicationTests.java"
-@REM set PACKAGE1_TEST_DIR=".\src\test\com\example\package1"
-@REM set PACKAGE2_TEST_DIR=".\src\test\com\example\package2"
-@REM
-@REM
-@REM javac %PACKAGE1_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
-@REM javac %PACKAGE2_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
+set PACKAGE1_TEST_DIR=".\src\test\com\example\package1"
+set PACKAGE2_TEST_DIR=".\src\test\com\example\package2"
+
+
+javac -cp ".;%TARGET_DIR_CLASSES%" %PACKAGE1_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
+javac -cp ".;%TARGET_DIR_CLASSES%" %PACKAGE2_TEST_DIR%\*.java -d %TARGET_DIR_TESTS%
 javac -cp ".;%TARGET_DIR_CLASSES%;%TARGET_DIR_TESTS%;" %MAIN_TEST_APP% -d %TARGET_DIR_TESTS%
 
 ECHO.
@@ -42,3 +42,5 @@ ECHO.
 PAUSE
 
 java -cp "%TARGET_DIR_TESTS%;%TARGET_DIR_CLASSES%" com.example.MainApplicationTests
+java -cp "%TARGET_DIR_CLASSES%;%TARGET_DIR_TESTS%" com.example.package1.Package1Tests
+java -cp "%TARGET_DIR_CLASSES%;%TARGET_DIR_TESTS%" com.example.package2.Package2Tests
